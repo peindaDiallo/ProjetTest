@@ -41,7 +41,7 @@
             <li>
                 <a class="dropdown ">
                     <span class="icon"><i class="mdi mdi-flag"></i></span>
-                    <span>language</span>
+                    <span>{{ __('main.language')}}</span>
                     <span class="icon"><i class="mdi mdi-chevron-down"></i></span>
                 </a>
                 <ul>

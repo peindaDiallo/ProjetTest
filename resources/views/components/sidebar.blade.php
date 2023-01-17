@@ -7,7 +7,7 @@
                 <li class="--set-active-index-html">
                     <a href="index.html">
                         <span class="icon"><i class="mdi mdi-desktop-mac"></i></span>
-                        <span class="menu-item-label">Dashboard</span>
+                        <span class="menu-item-label">{{ __('main.dasboard')}}</span>
                     </a>
                 </li>
             </ul>
@@ -17,7 +17,7 @@
                 <li>
                     <a class="dropdown">
                         <span class="icon"><i class="mdi mdi-view-list"></i></span>
-                        <span class="menu-item-label">Configuration</span>
+                        <span class="menu-item-label">{{ __('main.configuration')}}</span>
                         <span class="icon"><i class="mdi mdi-chevron-down"></i></span>
                     </a>
                     <ul>
@@ -28,7 +28,7 @@
                         </li>
                         <li>
                             <a href="#void">
-                                <span>Roles and Permissions</span>
+                                <span>{{ __('main.rolePermission')}}</span>
                             </a>
                         </li>
                     </ul>
