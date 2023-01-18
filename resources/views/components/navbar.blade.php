@@ -30,11 +30,18 @@
                             <span class="icon"><i class="mdi mdi-email"></i></span>
                             <span>Messages</span>
                         </a>
+
                         <hr class="navbar-divider">
-                        <a class="navbar-item">
-                            <span class="icon"><i class="mdi mdi-logout"></i></span>
-                            <span>Log Out</span>
-                        </a>
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                this.closest('form').submit();">
+                                <i class="bx bx-power-off me-2"></i>
+                                <span class="icon"><i class="mdi mdi-logout"></i></span>
+
+                                <span class="align-middle">{{ __('Log Out') }}</span>
+                            </a>
+                        </form>
             </div>
         </div>
         <ul class="menu-list">
