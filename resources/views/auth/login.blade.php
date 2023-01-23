@@ -9,7 +9,7 @@
 
     <!-- Tailwind is included -->
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
-    <link rel="stylesheet" href="{{asset('css/form/main.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/form/main.css') }}">
 
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
@@ -94,7 +94,6 @@
                         <x-input-error :messages="$errors->get('password')" class="mt-2" />
 
                     </div>
-                    {{--
                     <div class="field spaced">
                         <div class="control">
                             <label class="checkbox"><input type="checkbox" name="remember" value="1" checked>
@@ -102,7 +101,7 @@
                                 <span class="control-label">Remember</span>
                             </label>
                         </div>
-                    </div> --}}
+                    </div>
 
                     <hr>
 
@@ -129,7 +128,7 @@
 </div>
 
 <!-- Scripts below are for demo only -->
-<script type="text/javascript" src=" {{ asset('assets/js/main.js') }}"></script>
+<script type="text/javascript" src=" {{ asset('dist/js/main.js') }}"></script>
 
 {{-- <script type="text/javascript" src="js/main.min.js?v=1628755089081"></script> --}}
 
@@ -165,4 +164,3 @@
 </body>
 
 </html>
-

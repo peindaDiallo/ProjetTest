@@ -7,15 +7,14 @@
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.css">
 
+        @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
+        @include('sweetalert::alert')
 
         <link rel="stylesheet" href="{{asset('css/form/main.css')}}">
-
-
     </head>
 
     <body  class="sidebar-mini layout-navbar-fixed layout-fixed layout-footer-fixed" >
     <div class="wrapper">
-
 
         <div class="content-wrapper">
 

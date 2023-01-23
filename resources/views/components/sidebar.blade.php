@@ -1,4 +1,5 @@
 <div>
+
     <aside class="aside is-placed-left is-expanded">
 
         <div class="menu is-menu-main">
@@ -21,22 +22,21 @@
                         <span class="icon"><i class="mdi mdi-chevron-down"></i></span>
                     </a>
                     <ul>
-                        <li>
-                            <a href="#void">
-                                <span>User</span>
+                        <li class="nav-item">
+                            <a href="{{route('admin.users.index')}}" :active="request()->routeIs('admin.user.index')">
+                                <i class="far fa-circle nav-icon"></i> <p>{{__('main.user')}}</p>
+
                             </a>
                         </li>
                         <li>
-                            <a href="#void">
-                                <span>Roles and Permissions</span>
+                            <a href="{{route('admin.roles.index')}}" :active="request()->routeIs('admin.roles.index)">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>{{__('main.rolePermission')}}</p>
                             </a>
                         </li>
                     </ul>
                 </li>
             </ul>
-
-
         </div>
     </aside>
-    <!-- Walk as if you are kissing the Earth with your feet. - Thich Nhat Hanh -->
 </div>
