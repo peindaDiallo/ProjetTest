@@ -69,3 +69,21 @@ Array.from(document.getElementsByClassName('--jb-notification-dismiss')).forEach
     e.currentTarget.closest('.notification').classList.add('hidden')
   })
 })
+
+
+function showModel(id) {
+    const frmDelete = document.getElementById("delete-frm");
+    frmDelete.action = id;
+    const confirmationModal = document.getElementById("deleteConfirmationModel");
+    confirmationModal.style.display = 'block';
+    confirmationModal.classList.remove('fade');
+    confirmationModal.classList.add('show');
+}
+
+function dismissModel() {
+    const confirmationModal = document.getElementById("deleteConfirmationModel");
+    confirmationModal.style.display = 'none';
+    confirmationModal.classList.remove('show');
+    confirmationModal.classList.add('fade');
+}
+

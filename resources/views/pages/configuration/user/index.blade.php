@@ -43,21 +43,26 @@
                         </th>
                         <td class="actions-cell">
                             <div class="buttons right nowrap">
-                                <form>
+
                                     <button class="button small green --jb-modal" id="roleForm" data-target="sample-modal-2" type="button">
                                         <a href="{{route('admin.users.edit', $user->id)}}" class="btn btn-warning">
                                             <span class="icon"><i class="mdi mdi-account-edit"></i></span></a>
                                     </button>
-                                </form>
+
                                 @if ($user->id !== auth()->user()->id )
-                                    <form action="{{route('admin.users.destroy', $user->id)}}" method="POST">
+
+                                    <button class="button small red --jb-modal"
+                                            type="button"  onclick='showModel("users/{{$user->id }}")'>
+                                        <span class="icon"><i class="mdi mdi-trash-can"></i></span>
+                                    </button>
+                                   {{-- <form action="{{route('admin.users.destroy', $user->id)}}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button class="button small red --jb-modal"
                                                 type="submit">
                                             <span class="icon"><i class="mdi mdi-trash-can"></i></span>
                                         </button>
-                                    </form>
+                                    </form>--}}
                                 @endif
                             </div>
 
@@ -66,10 +71,13 @@
                     </tr>
                     @endforeach
                     </tbody>
-
+                    <x-delete-modal  message="{{ __('message.confirm_delete') }}"
+                                     cancel="{{ __('button.cancel') }}" confirm="{{ __('button.delete') }}" id="deleteConfirmationModel">
+                    </x-delete-modal>
                 </table>
                 </div>
-            {{$users->links()}}
+
+              {{$users->links()}}
         </div>
     </section>
 

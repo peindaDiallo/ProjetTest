@@ -8,6 +8,7 @@ return [
     'delete' => 'Delete',
     'update' => 'Update',
     'create' => 'Create',
+    'cancel' => 'Cancel',
 
 
 ];

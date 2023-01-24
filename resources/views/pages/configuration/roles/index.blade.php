@@ -61,20 +61,24 @@
                                         <td data-label="Name">{{ $role->name }}</td>
                                         <td class="actions-cell">
                                             <div class="buttons right nowrap">
-                                              <form>
+
                                                 <button class="button small blue --jb-modal" id="roleForm" data-target="sample-modal-2" type="button">
                                                     <a href="{{route('admin.roles.edit',$role->id)}}" class="btn btn-warning">
                                                     <span class="icon"><i class="mdi mdi-account-edit"></i></span></a>
                                                 </button>
-                                              </form>
-                                                <form action="{{route('admin.roles.destroy', $role->id)}}" method="POST">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button class="button small red --jb-modal"
-                                                            type="submit">
-                                                        <span class="icon"><i class="mdi mdi-trash-can"></i></span>
-                                                    </button>
-                                                </form>
+
+                                                <button class="button small red --jb-modal"
+                                                        type="button"  onclick='showModel("roles/{{$role->id }}")'>
+                                                    <span class="icon"><i class="mdi mdi-trash-can"></i></span>
+                                                </button>
+                                                {{--   <form action="{{route('admin.roles.destroy', $role->id)}}" method="POST">
+                                                       @csrf
+                                                       @method('DELETE')
+                                                       <button class="button small red --jb-modal"
+                                                               type="submit">
+                                                           <span class="icon"><i class="mdi mdi-trash-can"></i></span>
+                                                       </button>
+                                                   </form>--}}
                                             </div>
                                         </td>
                                     </tr>
@@ -82,7 +86,13 @@
                                     </tbody>
                             </table>
                         </div>
+
+                    <x-delete-modal  message="{{ __('message.confirm_delete') }}"
+                                     cancel="{{ __('button.cancel') }}" confirm="{{ __('button.delete') }}" id="deleteConfirmationModel">
+                    </x-delete-modal>
                     {{$roles->links()}}
+
+
 
                 </div>
             </div>
@@ -151,14 +161,23 @@
                                                             <span class="icon"><i class="mdi mdi-account-edit"></i></span></a>
                                                     </button>
                                                 </form>
-                                                <form action="{{route('admin.permissions.destroy', $permission->id)}}" method="POST">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button class="button small red --jb-modal"
-                                                            type="submit">
-                                                        <span class="icon"><i class="mdi mdi-trash-can"></i></span>
-                                                    </button>
-                                                </form>
+                                                <button class="button small red --jb-modal"
+                                                        type="button"  onclick='showModel("permissions/{{$permission->id }}")'>
+                                                    <span class="icon"><i class="mdi mdi-trash-can"></i></span>
+                                                </button><i class='bx bxs-trash' ></i>&nbsp{{__('button.delete')}}</a>
+
+                                                {{--  <form action="{{route('admin.permissions.destroy', $permission->id)}}" method="POST">
+                                                      @csrf
+                                                      @method('DELETE')
+                                                      <button class="button small red --jb-modal"
+                                                              type="submit">
+                                                          <span class="icon"><i class="mdi mdi-trash-can"></i></span>
+                                                      </button>
+                                                  </form>--}}
+
+                                                {{--<button class="button small red --jb-modal" data-target="sample-modal-2" onClick='showModel("permissions/{!! encrypt($permission->id) !!}")'>
+                                                    <span class="icon"><i class="mdi mdi-trash-can"></i></span>
+                                                </button>--}}
                                             </div>
                                         </td>
                                     </tr>
@@ -166,12 +185,19 @@
                                     </tbody>
                             </table>
                         </div>
+                    <x-delete-modal  message="{{ __('message.confirm_delete') }}"
+                                     cancel="{{ __('button.cancel') }}" confirm="{{ __('button.delete') }}" id="deleteConfirmationModel">
+                    </x-delete-modal>
                 </div>
             </div>
         </div>
+
     </section>
-    <br><br><br><br><br>
+
+
+
 </x-main>
+
 
 
 
